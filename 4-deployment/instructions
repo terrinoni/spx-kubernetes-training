@@ -1,0 +1,5 @@
+kubectl apply -f deployment.yaml
+kubectl exec -it deploy/nginx -- nginx -v
+kubectl set image deployment/nginx nginx=nginx:latest
+kubectl rollout status deployment/nginx
+kubectl rollout undo deployment/nginx

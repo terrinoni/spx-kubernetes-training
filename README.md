@@ -1,2 +1,2 @@
-# spx-kubernetes-training
-This repository contains some code about internal training on Kubernetes
+# Welcome to this repository!
+It contains several yaml and text files that were used to present Kubernetes to Spindox colleagues.

@@ -1,0 +1,2 @@
+kubectl apply -f deployandservice.yaml
+minikube service list

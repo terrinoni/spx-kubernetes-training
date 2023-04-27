@@ -1,0 +1,8 @@
+kubectl create configmap mariadb-config --from-file=max_allowed_packet.cnf
+kubectl apply -f secret.yaml
+kubectl create secret generic mariadb-user-creds --from-literal=MYSQL_USER=kubeuser --from-literal=MYSQL_PASSWORD=kube-still-rocks
+kubectl apply -f deployment.yaml
+kubectl exec -it <pod_id> -- env | grep MYSQL
+kubectl exec -it <pod_id> -- sh
+    mysql -uroot -p${MYSQL_ROOT_PASSWORD} -e 'show databases;'
+    mysql -uroot -p${MYSQL_ROOT_PASSWORD} -e "SHOW VARIABLES LIKE 'max_allowed_packet';"
